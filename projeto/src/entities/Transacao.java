@@ -2,19 +2,21 @@ package entities;
 
 public abstract class Transacao {
     private double montante;
-    private ColaboradorVendedor vendedor;
-    private Comprador comprador;
+    private Papel vendedor;
+    private Papel comprador;
     private double comissaoVendedor;
     private Veiculo veiculo;
     private TransacaoStatus status;
 
-    public Transacao(double montante, ColaboradorVendedor vendedor, Comprador comprador, double comissaoVendedor,
-            Veiculo veiculo) {
+    public Transacao(double montante, double comissaoVendedor,
+            Veiculo veiculo, TransacaoStatus status) {
         this.montante = montante;
-        this.vendedor = vendedor;
-        this.comprador = comprador;
         this.comissaoVendedor = comissaoVendedor;
         this.veiculo = veiculo;
+        this.status = status;
+        if (status == TransacaoStatus.VENDA) {
+            vendedor = Concessionaria.getInstance();
+        }
     }
 
     public double getMontante() {
@@ -25,15 +27,15 @@ public abstract class Transacao {
         this.montante = montante;
     }
 
-    public ColaboradorVendedor getVendedor() {
+    public Papel getVendedor() {
         return vendedor;
     }
 
-    public void setVendedor(ColaboradorVendedor vendedor) {
+    public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
     }
 
-    public Comprador getComprador() {
+    public Papel getComprador() {
         return comprador;
     }
 

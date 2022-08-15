@@ -1,9 +1,6 @@
 
 package entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ColaboradorVendedor extends Pessoa {
     private int id;
     private double salarioBase;
@@ -40,23 +37,5 @@ public class ColaboradorVendedor extends Pessoa {
 
     public void setFaturamentoTotal(double faturamentoTotal) {
         this.faturamentoTotal = faturamentoTotal;
-    }
-
-    public double faturamentoTotal() {
-        double resultado = 0;
-        for (Transacao venda : vendas) {
-            resultado += venda.getMontante();
-        }
-
-        return resultado;
-    }
-
-    public double calculaSalario() {
-        double salario = salarioBase;
-        for (Transacao venda : vendas) {
-            salario += faturamentoTotal * (venda.getComissaoVendedor() / 100);
-        }
-
-        return salario;
     }
 }

@@ -1,17 +1,11 @@
 package entities;
 
-public abstract class Empresa {
-    private String nome;
-    private Contato contato;
-    private Endereco endereco;
-    private String cnpj;
-
-    public Empresa(String nome, Contato contato, Endereco endereco, String cnpj) {
-        this.nome = nome;
-        this.contato = contato;
-        this.endereco = endereco;
-        this.cnpj = cnpj;
-    }
+// TODO documentar
+public class Empresa extends Papel {
+    protected String nome;
+    protected Contato contato;
+    protected Endereco endereco;
+    protected String cnpj;
 
     public String getNome() {
         return nome;
