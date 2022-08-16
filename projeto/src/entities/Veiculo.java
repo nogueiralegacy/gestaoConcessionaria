@@ -1,31 +1,71 @@
 package entities;
 
 public class Veiculo {
+    private String modelo;
+    private int ano;
+    private String marca;
+    private double valorComercial;
     private String chassi; // código VIN;
     private String cor;
     private boolean usado;
     private int kilometragem;
-    private long renavam;
+    private String renavam;
     private String placa;
     private String categoria;
+    private String adicionais;
 
-    public Veiculo(String chassi, String cor, long renavam, String placa, String categoria) {
+    public Veiculo(String modelo, int ano, String marca, double valorComercial, String chassi, String cor,
+            int kilometragem, String renavam,
+            String placa,
+            String categoria, String adicionais) {
+        this.modelo = modelo;
+        this.ano = ano;
+        this.marca = marca;
+        this.valorComercial = valorComercial;
         this.chassi = chassi;
         this.cor = cor;
-        this.usado = false;
-        this.kilometragem = 0;
+        this.kilometragem = kilometragem;
+        if (kilometragem > 0) {
+            this.usado = true;
+        } else {
+            this.usado = false;
+        }
         this.renavam = renavam;
         this.placa = placa;
         this.categoria = categoria;
+        this.adicionais = adicionais;
     }
 
-    public Veiculo(String chassi, String cor, int kilometragem, long renavam, String placa) {
-        this.chassi = chassi;
-        this.cor = cor;
-        this.usado = true;
-        this.kilometragem = kilometragem;
-        this.renavam = renavam;
-        this.placa = placa;
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public double getValorComercial() {
+        return valorComercial;
+    }
+
+    public void setValorComercial(double valorComercial) {
+        this.valorComercial = valorComercial;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public String getCategoria() {
@@ -52,6 +92,14 @@ public class Veiculo {
         this.cor = cor;
     }
 
+    public String getAdicionais() {
+        return adicionais;
+    }
+
+    public void setAdicionais(String adicionais) {
+        this.adicionais = adicionais;
+    }
+
     public boolean isUsado() {
         return usado;
     }
@@ -68,11 +116,11 @@ public class Veiculo {
         this.kilometragem = kilometragem;
     }
 
-    public long getRenavam() {
+    public String getRenavam() {
         return renavam;
     }
 
-    public void setRenavam(long renavam) {
+    public void setRenavam(String renavam) {
         this.renavam = renavam;
     }
 

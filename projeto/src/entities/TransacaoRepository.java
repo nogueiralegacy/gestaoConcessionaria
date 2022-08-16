@@ -13,4 +13,6 @@ public interface TransacaoRepository {
 
     public List<Transacao> getCompras();
 
+    public void saveTransacao();
+
 }

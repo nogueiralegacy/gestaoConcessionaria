@@ -2,8 +2,8 @@
 package entities;
 
 public class ColaboradorVendedor extends Pessoa {
-    private int id;
     private double salarioBase;
+    private int id;
     private double faturamentoTotal;
 
     public ColaboradorVendedor(String nome, Contato contatoPessoal, Endereco enderecoResidencial,
