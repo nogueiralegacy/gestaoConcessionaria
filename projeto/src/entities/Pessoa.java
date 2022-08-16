@@ -1,6 +1,6 @@
 package entities;
 
-public class Pessoa {
+public class Pessoa extends Papel {
     private String nome;
     private Contato contatoPessoal;
     private Endereco enderecoResidencial;

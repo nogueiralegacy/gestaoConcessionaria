@@ -1,5 +1,5 @@
 package entities;
 
-public class VendedorRepository {
+public interface VendedorRepository {
 
 }
