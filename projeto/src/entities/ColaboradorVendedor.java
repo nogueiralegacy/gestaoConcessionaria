@@ -1,26 +1,30 @@
 
 package entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ColaboradorVendedor extends Pessoa {
     private double salarioBase;
+    private int id;
     private double faturamentoTotal;
-
-    private List<Transacao> vendas = new ArrayList<>();
 
     public ColaboradorVendedor(String nome, Contato contatoPessoal, Endereco enderecoResidencial,
             EstadoCivil estadoCivil, String cpf,
-            String rg, double salarioBase, List<Transacao> vendas) {
+            String rg, double salarioBase, int id) {
         super(nome, contatoPessoal, enderecoResidencial, estadoCivil, cpf, rg);
         this.salarioBase = salarioBase;
         this.faturamentoTotal = 0;
-        this.vendas = vendas;
+        this.id = id;
     }
 
     public double getSalarioBase() {
         return salarioBase;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setSalarioBase(double salarioBase) {
@@ -33,31 +37,5 @@ public class ColaboradorVendedor extends Pessoa {
 
     public void setFaturamentoTotal(double faturamentoTotal) {
         this.faturamentoTotal = faturamentoTotal;
-    }
-
-    public List<Transacao> getVendas() {
-        return vendas;
-    }
-
-    public void adicionaVenda(Transacao venda) {
-        vendas.add(venda);
-    }
-
-    public double faturamentoTotal() {
-        double resultado = 0;
-        for (Transacao venda : vendas) {
-            resultado += venda.getMontante();
-        }
-
-        return resultado;
-    }
-
-    public double calculaSalario() {
-        double salario = salarioBase;
-        for (Transacao venda : vendas) {
-            salario += faturamentoTotal * (venda.getComissaoVendedor() / 100);
-        }
-
-        return salario;
     }
 }

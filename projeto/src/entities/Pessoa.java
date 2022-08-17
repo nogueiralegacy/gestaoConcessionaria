@@ -1,19 +1,19 @@
 package entities;
 
-public abstract class Pessoa {
+public class Pessoa {
     private String nome;
-    private Contato contatoPessoal;
-    private Endereco enderecoResidencial;
+    private Contato contato;
+    private Endereco endereco;
     private EstadoCivil estadoCivil;
     private String cpf;
     private String rg;
 
-    public Pessoa(String nome, Contato contatoPessoal, Endereco enderecoResidencial, EstadoCivil estadoCivil,
+    public Pessoa(String nome, Contato contato, Endereco endereco, EstadoCivil estadoCivil,
             String cpf,
             String rg) {
         this.nome = nome;
-        this.contatoPessoal = contatoPessoal;
-        this.enderecoResidencial = enderecoResidencial;
+        this.contato = contato;
+        this.endereco = endereco;
         this.estadoCivil = estadoCivil;
         this.cpf = cpf;
         this.rg = rg;
@@ -34,19 +34,19 @@ public abstract class Pessoa {
     }
 
     public Contato getContatoPessoal() {
-        return contatoPessoal;
+        return contato;
     }
 
     public void setContatoPessoal(Contato contatoPessoal) {
-        this.contatoPessoal = contatoPessoal;
+        this.contato = contatoPessoal;
     }
 
-    public Endereco getEnderecoResidencial() {
-        return enderecoResidencial;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setEnderecoResidencial(Endereco enderecoResidencial) {
-        this.enderecoResidencial = enderecoResidencial;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public EstadoCivil getEstadoCivil() {
@@ -79,6 +79,24 @@ public abstract class Pessoa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String toString() {
+        String dadosPessoa = null;
+
+        dadosPessoa += getNome() + "," + getEstadoCivil().toString().toLowerCase();
+        dadosPessoa += ", portador da célula de identidade R.G. n° " + getRg();
+        dadosPessoa += "e CPF n° " + getCpf();
+        dadosPessoa += ", residente e domiciliar à rua: " + getEndereco().getRua();
+        dadosPessoa += ", n°: " + getEndereco().getNumero();
+        dadosPessoa += ", bairro: " + getEndereco().getBairro();
+        dadosPessoa += ", cep: " + getEndereco().getCep();
+        dadosPessoa += ", cidade: " + getEndereco().getCidade();
+        dadosPessoa += ", estado: " + getEndereco().getEstado() + ".\n";
+        dadosPessoa += "Telefone: " + getContatoPessoal().getTelefone();
+        dadosPessoa += "Email: " + getContatoPessoal().getEmail();
+
+        return dadosPessoa;
     }
 
 }

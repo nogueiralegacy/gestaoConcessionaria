@@ -1,52 +1,32 @@
 package entities;
 
 public abstract class Transacao {
-    private double montante;
-    private ColaboradorVendedor vendedor;
-    private Comprador comprador;
-    private double comissaoVendedor;
+    private Pessoa pessoa;
+    private Empresa empresa;
     private Veiculo veiculo;
+    private ColaboradorVendedor colaboradorVendedor;
     private TransacaoStatus status;
 
-    public Transacao(double montante, ColaboradorVendedor vendedor, Comprador comprador, double comissaoVendedor,
-            Veiculo veiculo) {
-        this.montante = montante;
-        this.vendedor = vendedor;
-        this.comprador = comprador;
-        this.comissaoVendedor = comissaoVendedor;
+    public Transacao(Veiculo veiculo, TransacaoStatus status) {
         this.veiculo = veiculo;
+        this.status = status;
+
     }
 
-    public double getMontante() {
-        return montante;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setMontante(double montante) {
-        this.montante = montante;
+    public void setVendedor(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 
-    public ColaboradorVendedor getVendedor() {
-        return vendedor;
+    public Empresa getComprador() {
+        return empresa;
     }
 
-    public void setVendedor(ColaboradorVendedor vendedor) {
-        this.vendedor = vendedor;
-    }
-
-    public Comprador getComprador() {
-        return comprador;
-    }
-
-    public void setComprador(Comprador comprador) {
-        this.comprador = comprador;
-    }
-
-    public double getComissaoVendedor() {
-        return comissaoVendedor;
-    }
-
-    public void setComissaoVendedor(double comissaoVendedor) {
-        this.comissaoVendedor = comissaoVendedor;
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
     public Veiculo getVeiculo() {
@@ -63,6 +43,22 @@ public abstract class Transacao {
 
     public void setStatus(TransacaoStatus status) {
         this.status = status;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public ColaboradorVendedor getColaboradorVendedor() {
+        return colaboradorVendedor;
+    }
+
+    public void setColaboradorVendedor(ColaboradorVendedor colaboradorVendedor) {
+        this.colaboradorVendedor = colaboradorVendedor;
     }
 
 }
