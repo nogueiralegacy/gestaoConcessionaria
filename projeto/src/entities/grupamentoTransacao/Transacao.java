@@ -1,8 +1,8 @@
 package entities.grupamentoTransacao;
 
-import entities.grupamentoCliente.grupamentoPessoa.Pessoa;
 import entities.grupamentoColaboradorVendedor.ColaboradorVendedor;
 import entities.grupamentoConcessionaria.Empresa;
+import entities.grupamentoPessoa.Pessoa;
 import entities.grupamentoVeiculo.Veiculo;
 
 public abstract class Transacao {

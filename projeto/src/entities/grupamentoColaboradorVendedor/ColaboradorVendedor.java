@@ -1,10 +1,10 @@
 
 package entities.grupamentoColaboradorVendedor;
 
-import entities.grupamentoCliente.grupamentoPessoa.EstadoCivil;
-import entities.grupamentoCliente.grupamentoPessoa.Pessoa;
 import entities.grupamentoContato.Contato;
 import entities.grupamentoEndereco.Endereco;
+import entities.grupamentoPessoa.EstadoCivil;
+import entities.grupamentoPessoa.Pessoa;
 
 public class ColaboradorVendedor extends Pessoa {
     private double salarioBase;
