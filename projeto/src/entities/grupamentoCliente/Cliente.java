@@ -1,9 +1,9 @@
 package entities.grupamentoCliente;
 
-import entities.grupamentoCliente.grupamentoPessoa.EstadoCivil;
-import entities.grupamentoCliente.grupamentoPessoa.Pessoa;
 import entities.grupamentoContato.Contato;
 import entities.grupamentoEndereco.Endereco;
+import entities.grupamentoPessoa.EstadoCivil;
+import entities.grupamentoPessoa.Pessoa;
 
 public class Cliente extends Pessoa {
 
