@@ -35,11 +35,13 @@ public class CSVClienteRepository implements ClienteRepository {
 
             fw.write(linhaCliente);
             fw.close();
+
+            return cliente;
         } catch (Exception e) {
             System.out.println("EROO: " + e.getMessage());
-        }
 
-        return cliente;
+            return null;
+        }
     }
 
     @Override

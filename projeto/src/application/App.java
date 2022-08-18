@@ -24,7 +24,7 @@ public class App {
         // @Teste SistemaDeArquivosColaboradorVendedorRepository;
         int id = 001;
         ColaboradorVendedorRepository repoCola = new CSVColaboradorVendedorRepository();
-        ColaboradorVendedor colaboradorVendedor = repoCola.getColaboradorVendedorId(id);
+        ColaboradorVendedor colaboradorVendedor = repoCola.porId(id);
         System.out.println(colaboradorVendedor.getSalarioBase());
 
         // @Teste SistemaDeArquivosClienteRepository;

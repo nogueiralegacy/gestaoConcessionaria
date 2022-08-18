@@ -30,10 +30,13 @@ public class CSVVeiculoRepository implements VeiculoRepository {
 
             fw.write(linhaVeiculo);
             fw.close();
+
+            return veiculo;
         } catch (IOException e) {
             System.out.println("ERRO: " + e.getMessage());
+
+            return null;
         }
-        return veiculo;
     }
 
     @Override
