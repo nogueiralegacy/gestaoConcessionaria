@@ -20,8 +20,7 @@ public interface ClienteRepository {
      * @param cliente O cliente a ser armazenado.
      * @return O cliente armazenado, possivelmente com identificado
      *         único atribuído pelo mecanismo de persistência ou
-     *         {@code null} caso ocorra falha na persistência seja
-     *         possível persistir.
+     *         {@code null} caso ocorra falha na persistência.
      */
     public Cliente persiste(Cliente cliente);
 }

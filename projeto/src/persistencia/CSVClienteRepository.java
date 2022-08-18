@@ -2,6 +2,7 @@ package persistencia;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import negocio.Cliente;
@@ -11,17 +12,40 @@ import negocio.Endereco;
 import negocio.EstadoCivil;
 
 public class CSVClienteRepository implements ClienteRepository {
+    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\clientes.txt";
 
     @Override
     public Cliente persiste(Cliente cliente) {
-        return null;
+        try {
+            FileWriter fw;
+            fw = new FileWriter(arquivo, true);
+            String linhaCliente = cliente.getNome() + ";";
+            linhaCliente += cliente.getContato().getEmail() + ";";
+            linhaCliente += cliente.getContato().getTelefone() + ";";
+            linhaCliente += cliente.getEndereco().getCidade() + ";";
+            linhaCliente += cliente.getEndereco().getEstado() + ";";
+            linhaCliente += cliente.getEndereco().getCep() + ";";
+            linhaCliente += cliente.getEndereco().getRua() + ";";
+            linhaCliente += cliente.getEndereco().getNumero() + ";";
+            linhaCliente += cliente.getEndereco().getBairro() + ";";
+            linhaCliente += cliente.getEndereco().getComplemento() + ";";
+            linhaCliente += cliente.getEstadoCivil() + ";";
+            linhaCliente += cliente.getCpf() + ";";
+            linhaCliente += cliente.getRg() + ";";
+
+            fw.write(linhaCliente);
+            fw.close();
+        } catch (Exception e) {
+            System.out.println("EROO: " + e.getMessage());
+        }
+
+        return cliente;
     }
 
     @Override
     public Cliente getClienteCpf(String cpfParaBuscar) throws IOException {
         FileReader r = null;
         BufferedReader bf = null;
-        String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\clientes.txt";
 
         try {
             r = new FileReader(arquivo);

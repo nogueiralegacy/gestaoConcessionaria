@@ -28,13 +28,4 @@ public class Contato {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String toString() {
-        String dadosContato = "";
-
-        dadosContato += email + ";";
-        dadosContato += telefone;
-
-        return dadosContato;
-    }
 }
