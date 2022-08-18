@@ -1,4 +1,4 @@
-package entities.grupamentoTransacao;
+package negocio;
 
 import java.util.List;
 

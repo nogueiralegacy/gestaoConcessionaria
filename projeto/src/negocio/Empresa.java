@@ -1,7 +1,4 @@
-package entities.grupamentoEmpresa;
-
-import entities.grupamentoContato.Contato;
-import entities.grupamentoEndereco.Endereco;
+package negocio;
 
 public abstract class Empresa {
     private String nome;

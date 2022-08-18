@@ -1,4 +1,4 @@
-package entities.grupamentoPessoa;
+package negocio;
 
 public enum EstadoCivil {
     SOLTEIRO,

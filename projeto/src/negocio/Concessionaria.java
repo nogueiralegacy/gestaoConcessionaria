@@ -1,8 +1,4 @@
-package entities.grupamentoConcessionaria;
-
-import entities.grupamentoContato.Contato;
-import entities.grupamentoEmpresa.Empresa;
-import entities.grupamentoEndereco.Endereco;
+package negocio;
 
 public class Concessionaria extends Empresa {
 

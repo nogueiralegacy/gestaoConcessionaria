@@ -1,4 +1,4 @@
-package entities.grupamentoContato;
+package negocio;
 
 public class Contato {
     private String telefone;

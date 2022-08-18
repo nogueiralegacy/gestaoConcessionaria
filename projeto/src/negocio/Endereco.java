@@ -1,4 +1,4 @@
-package entities.grupamentoEndereco;
+package negocio;
 
 public class Endereco { // ideia de ter como base um arquivo .csv com a base de ceps do Brasil;
     private String cidade;

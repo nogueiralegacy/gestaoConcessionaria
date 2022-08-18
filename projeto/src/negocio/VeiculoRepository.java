@@ -1,4 +1,4 @@
-package entities.grupamentoVeiculo;
+package negocio;
 
 import java.io.IOException;
 

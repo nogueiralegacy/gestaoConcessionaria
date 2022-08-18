@@ -1,11 +1,11 @@
-package entities.sistemaDeArquivos;
+package persistencia;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import entities.grupamentoVeiculo.Veiculo;
-import entities.grupamentoVeiculo.VeiculoRepository;
+import negocio.Veiculo;
+import negocio.VeiculoRepository;
 
 public class SistemaDeArquivosVeiculoRepository implements VeiculoRepository {
 

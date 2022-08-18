@@ -1,4 +1,4 @@
-package entities.grupamentoColaboradorVendedor;
+package negocio;
 
 import java.io.IOException;
 

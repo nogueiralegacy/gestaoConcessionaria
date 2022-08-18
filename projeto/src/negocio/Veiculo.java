@@ -1,4 +1,4 @@
-package entities.grupamentoVeiculo;
+package negocio;
 
 public class Veiculo {
     private String modelo;
