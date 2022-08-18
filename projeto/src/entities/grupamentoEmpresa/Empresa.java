@@ -1,14 +1,20 @@
-package entities.grupamentoConcessionaria;
+package entities.grupamentoEmpresa;
 
 import entities.grupamentoContato.Contato;
 import entities.grupamentoEndereco.Endereco;
 
-// TODO documentar
-public class Empresa {
-    protected String nome;
-    protected Contato contato;
-    protected Endereco endereco;
-    protected String cnpj;
+public abstract class Empresa {
+    private String nome;
+    private String cnpj;
+    private Contato contato;
+    private Endereco endereco;
+
+    public Empresa(String nome, String cnpj, Contato contato, Endereco endereco) {
+        this.nome = nome;
+        this.contato = contato;
+        this.endereco = endereco;
+        this.cnpj = cnpj;
+    }
 
     public String getNome() {
         return nome;
