@@ -30,13 +30,13 @@ public class SistemaDeArquivosConcessionariaRepository implements Concessionaria
             String cnpj = campos[1];
             String email = campos[2];
             String telefone = campos[3];
-            String cidade = campos[3];
-            String estado = campos[4];
-            String cep = campos[5];
-            String bairro = campos[8];
-            int numero = Integer.parseInt(campos[7]);
-            String rua = campos[6];
-            String complemento = campos[9];
+            String cidade = campos[4];
+            String estado = campos[5];
+            String cep = campos[6];
+            String bairro = campos[7];
+            int numero = Integer.parseInt(campos[8]);
+            String rua = campos[9];
+            String complemento = campos[10];
 
             Contato contato = new Contato(telefone, email);
             Endereco endereco = new Endereco(cidade, estado, cep, rua, numero, bairro, complemento);
