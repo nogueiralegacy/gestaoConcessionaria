@@ -44,6 +44,7 @@ public class CSVConcessionariaRepository implements ConcessionariaRepository {
             return new Concessionaria(nome, cnpj, contato, endereco);
         } catch (IOException e) {
             System.out.println("ERRO: " + e.getMessage());
+
         } finally {
             r.close();
             bf.close();

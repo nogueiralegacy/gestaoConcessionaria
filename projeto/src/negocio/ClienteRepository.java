@@ -18,7 +18,7 @@ public interface ClienteRepository {
      * Armazena o cliente fornecido.
      * 
      * @param cliente O cliente a ser armazenado.
-     * @return O cliente armazenado, possivelmente com identificado
+     * @return O cliente armazenado, possivelmente com identificador
      *         único atribuído pelo mecanismo de persistência ou
      *         {@code null} caso ocorra falha na persistência.
      */
