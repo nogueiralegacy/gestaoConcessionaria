@@ -1,19 +1,23 @@
 package negocio;
 
+import java.time.LocalDateTime;
+
 public abstract class Transacao {
     private Cliente cliente;
     private Concessionaria concessionaria;
     private Veiculo veiculo;
     private ColaboradorVendedor colaboradorVendedor;
     private TransacaoStatus status;
+    private LocalDateTime dataHora;
 
     public Transacao(Cliente cliente, Concessionaria concessionaria, Veiculo veiculo,
-            ColaboradorVendedor colaboradorVendedor, TransacaoStatus status) {
+            ColaboradorVendedor colaboradorVendedor, TransacaoStatus status, LocalDateTime dataHora) {
         this.cliente = cliente;
         this.concessionaria = concessionaria;
         this.veiculo = veiculo;
         this.colaboradorVendedor = colaboradorVendedor;
         this.status = status;
+        this.dataHora = dataHora;
     }
 
     public Cliente getCliente() {
@@ -56,4 +60,11 @@ public abstract class Transacao {
         this.concessionaria = concessionaria;
     }
 
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
+    }
 }

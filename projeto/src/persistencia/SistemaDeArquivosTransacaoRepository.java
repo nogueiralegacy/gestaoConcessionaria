@@ -1,5 +1,7 @@
 package persistencia;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 import negocio.Transacao;
@@ -38,9 +40,19 @@ public class SistemaDeArquivosTransacaoRepository implements TransacaoRepository
     }
 
     @Override
-    public void saveTransacao() {
-        // TODO Auto-generated method stub
+    public void saveTransacao(Transacao transacao) throws IOException {
 
+        try {
+            FileWriter fw;
+            String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\transacoes.txt";
+
+            fw = new FileWriter(arquivo, true);
+            fw.write(String.valueOf(transacao.getStatus());
+
+            fw.close();
+        } catch (Exception e) {
+
+        }
     }
 
 }
