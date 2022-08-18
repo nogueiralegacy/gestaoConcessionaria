@@ -44,15 +44,4 @@ public abstract class Empresa {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-
-    public String toString() {
-        String dadosEmpresa = "";
-
-        dadosEmpresa += getNome() + ";";
-        dadosEmpresa += getCnpj() + ";";
-        dadosEmpresa += endereco.toString() + ";";
-        dadosEmpresa += contato.toString() + ";";
-
-        return dadosEmpresa;
-    }
 }

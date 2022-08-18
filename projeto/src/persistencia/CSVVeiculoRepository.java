@@ -2,18 +2,44 @@ package persistencia;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import negocio.Veiculo;
 import negocio.VeiculoRepository;
 
 public class CSVVeiculoRepository implements VeiculoRepository {
+    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\veiculos.txt";
 
     @Override
-    public Veiculo getVeiculoPlaca(String placaParaBuscar) throws IOException {
+    public Veiculo persiste(Veiculo veiculo) {
+        try {
+            FileWriter fw;
+            fw = new FileWriter(arquivo, true);
+
+            String linhaVeiculo = veiculo.getModelo() + ";";
+            linhaVeiculo += veiculo.getAno() + ";";
+            linhaVeiculo += veiculo.getMarca() + ";";
+            linhaVeiculo += veiculo.getValorComercial() + ";";
+            linhaVeiculo += veiculo.getChassi() + ";";
+            linhaVeiculo += veiculo.getCor() + ";";
+            linhaVeiculo += veiculo.getRenavam() + ";";
+            linhaVeiculo += veiculo.getPlaca() + ";";
+            linhaVeiculo += veiculo.getCategoria() + ";";
+            linhaVeiculo += veiculo.getAdicionais() + ";";
+
+            fw.write(linhaVeiculo);
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("ERRO: " + e.getMessage());
+        }
+        return veiculo;
+    }
+
+    @Override
+    public Veiculo porPlaca(String placaParaBuscar) throws IOException {
         FileReader r = null;
         BufferedReader bf = null;
-        String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\veiculos.txt";
 
         try {
             r = new FileReader(arquivo);

@@ -18,7 +18,7 @@ public class App {
         // @Teste SistemaDeArquivosVeiculoRepository;
         String placa = "PRW6D02";
         VeiculoRepository repoVei = new CSVVeiculoRepository();
-        Veiculo veiculo = repoVei.getVeiculoPlaca(placa);
+        Veiculo veiculo = repoVei.porPlaca(placa);
         System.out.println(veiculo.isUsado());
 
         // @Teste SistemaDeArquivosColaboradorVendedorRepository;
