@@ -1,7 +1,7 @@
 package entities.grupamentoTransacao;
 
 import entities.grupamentoColaboradorVendedor.ColaboradorVendedor;
-import entities.grupamentoConcessionaria.Empresa;
+import entities.grupamentoEmpresa.Empresa;
 import entities.grupamentoPessoa.Pessoa;
 import entities.grupamentoVeiculo.Veiculo;
 

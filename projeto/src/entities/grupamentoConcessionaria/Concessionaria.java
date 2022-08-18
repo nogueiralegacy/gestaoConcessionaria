@@ -1,23 +1,13 @@
 package entities.grupamentoConcessionaria;
 
-public class Concessionaria {
+import entities.grupamentoContato.Contato;
+import entities.grupamentoEmpresa.Empresa;
+import entities.grupamentoEndereco.Endereco;
 
-    // TODO enviar atributos para arquivo.
-    public static Empresa getInstance() {
-        Empresa empresa = new Empresa();
-        empresa.nome = "Concessionaria INF";
-        empresa.contato.setEmail("vendas@concessionariainf@gmil.com");
-        empresa.contato.setTelefone("62111111111");
-        empresa.endereco.setBairro("Campus Samambaia");
-        empresa.endereco.setCep("111111-11");
-        empresa.endereco.setCidade("Goiânia");
-        empresa.endereco.setEstado("GO");
-        empresa.endereco.setRua("Rua 1");
-        empresa.endereco.setNumero(1);
-        empresa.endereco.setComplemento("Do lado da rua 2");
-        empresa.cnpj = "12345678-91";
+public class Concessionaria extends Empresa {
 
-        return empresa;
+    public Concessionaria(String nome, String cnpj, Contato contato, Endereco endereco) {
+        super(nome, cnpj, contato, endereco);
     }
 
 }
