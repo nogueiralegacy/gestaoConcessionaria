@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import entities.grupamentoCliente.Cliente;
+import entities.grupamentoContato.Contato;
+import entities.grupamentoEndereco.Endereco;
+import entities.grupamentoPessoa.ClienteRepository;
 import entities.grupamentoPessoa.EstadoCivil;
 
 public class SistemaDeArquivosClienteRepository implements ClienteRepository {
