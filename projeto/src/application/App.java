@@ -1,17 +1,17 @@
 package application;
 
-import entities.grupamentoCliente.Cliente;
-import entities.grupamentoColaboradorVendedor.ColaboradorVendedor;
-import entities.grupamentoColaboradorVendedor.ColaboradorVendedorRepository;
-import entities.grupamentoConcessionaria.Concessionaria;
-import entities.grupamentoConcessionaria.ConcessionariaRepository;
-import entities.grupamentoPessoa.ClienteRepository;
-import entities.grupamentoVeiculo.Veiculo;
-import entities.grupamentoVeiculo.VeiculoRepository;
-import entities.sistemaDeArquivos.SistemaDeArquivosClienteRepository;
-import entities.sistemaDeArquivos.SistemaDeArquivosColaboradorVendedorRepository;
-import entities.sistemaDeArquivos.SistemaDeArquivosConcessionariaRepository;
-import entities.sistemaDeArquivos.SistemaDeArquivosVeiculoRepository;
+import negocio.Cliente;
+import negocio.ClienteRepository;
+import negocio.ColaboradorVendedor;
+import negocio.ColaboradorVendedorRepository;
+import negocio.Concessionaria;
+import negocio.ConcessionariaRepository;
+import negocio.Veiculo;
+import negocio.VeiculoRepository;
+import persistencia.SistemaDeArquivosClienteRepository;
+import persistencia.SistemaDeArquivosColaboradorVendedorRepository;
+import persistencia.SistemaDeArquivosConcessionariaRepository;
+import persistencia.SistemaDeArquivosVeiculoRepository;
 
 public class App {
     public static void main(String[] args) throws Exception {

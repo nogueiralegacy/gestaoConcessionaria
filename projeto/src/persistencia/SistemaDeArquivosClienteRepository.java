@@ -1,23 +1,22 @@
-package entities.sistemaDeArquivos;
+package persistencia;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import entities.grupamentoColaboradorVendedor.ColaboradorVendedor;
-import entities.grupamentoColaboradorVendedor.ColaboradorVendedorRepository;
-import entities.grupamentoContato.Contato;
-import entities.grupamentoEndereco.Endereco;
-import entities.grupamentoPessoa.EstadoCivil;
+import negocio.Cliente;
+import negocio.ClienteRepository;
+import negocio.Contato;
+import negocio.Endereco;
+import negocio.EstadoCivil;
 
-public class SistemaDeArquivosColaboradorVendedorRepository implements ColaboradorVendedorRepository {
+public class SistemaDeArquivosClienteRepository implements ClienteRepository {
 
     @Override
-    public ColaboradorVendedor getColaboradorVendedorId(int idParaBuscar) throws IOException {
-
+    public Cliente getClienteCpf(String cpfParaBuscar) throws IOException {
         FileReader r = null;
         BufferedReader bf = null;
-        String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\colaboradoresVendedores.txt";
+        String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\clientes.txt";
 
         try {
             r = new FileReader(arquivo);
@@ -27,8 +26,9 @@ public class SistemaDeArquivosColaboradorVendedorRepository implements Colaborad
             String[] campos = new String[13];
 
             while ((linha = bf.readLine()) != null) {
+
                 campos = linha.split(";");
-                if (Integer.parseInt(campos[14]) == idParaBuscar) {
+                if (campos[11].equals(cpfParaBuscar)) {
                     String nome = campos[0];
                     String email = campos[1];
                     String telefone = campos[2];
@@ -42,15 +42,12 @@ public class SistemaDeArquivosColaboradorVendedorRepository implements Colaborad
                     EstadoCivil estadoCivil = EstadoCivil.valueOf(campos[10].toUpperCase());
                     String cpf = campos[11];
                     String rg = campos[12];
-                    double salarioBase = Double.parseDouble(campos[13]);
-                    int id = Integer.parseInt(campos[14]);
 
                     Contato contato = new Contato(telefone, email);
                     Endereco endereco = new Endereco(cidade, estado, cep, rua, numero, bairro, complemento);
 
-                    return new ColaboradorVendedor(nome, contato, endereco, estadoCivil, cpf, rg, salarioBase, id);
+                    return new Cliente(nome, contato, endereco, estadoCivil, cpf, rg);
                 }
-
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

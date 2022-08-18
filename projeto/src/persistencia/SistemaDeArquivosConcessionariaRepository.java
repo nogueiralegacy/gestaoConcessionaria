@@ -1,13 +1,13 @@
-package entities.sistemaDeArquivos;
+package persistencia;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import entities.grupamentoConcessionaria.Concessionaria;
-import entities.grupamentoConcessionaria.ConcessionariaRepository;
-import entities.grupamentoContato.Contato;
-import entities.grupamentoEndereco.Endereco;
+import negocio.Concessionaria;
+import negocio.ConcessionariaRepository;
+import negocio.Contato;
+import negocio.Endereco;
 
 public class SistemaDeArquivosConcessionariaRepository implements ConcessionariaRepository {
 

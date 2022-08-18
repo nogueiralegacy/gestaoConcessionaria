@@ -1,9 +1,9 @@
-package entities.sistemaDeArquivos;
+package persistencia;
 
 import java.util.List;
 
-import entities.grupamentoTransacao.Transacao;
-import entities.grupamentoTransacao.TransacaoRepository;
+import negocio.Transacao;
+import negocio.TransacaoRepository;
 
 public class SistemaDeArquivosTransacaoRepository implements TransacaoRepository {
 

@@ -1,4 +1,4 @@
-package entities.grupamentoTransacao;
+package negocio;
 
 public enum TransacaoStatus {
     COMPRA,

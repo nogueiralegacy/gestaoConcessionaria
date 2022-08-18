@@ -1,4 +1,4 @@
-package entities.grupamentoConcessionaria;
+package negocio;
 
 import java.io.IOException;
 
