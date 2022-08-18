@@ -3,11 +3,14 @@ package application;
 import entities.grupamentoCliente.Cliente;
 import entities.grupamentoColaboradorVendedor.ColaboradorVendedor;
 import entities.grupamentoColaboradorVendedor.ColaboradorVendedorRepository;
+import entities.grupamentoConcessionaria.Concessionaria;
+import entities.grupamentoConcessionaria.ConcessionariaRepository;
 import entities.grupamentoPessoa.ClienteRepository;
 import entities.grupamentoVeiculo.Veiculo;
 import entities.grupamentoVeiculo.VeiculoRepository;
 import entities.sistemaDeArquivos.SistemaDeArquivosClienteRepository;
 import entities.sistemaDeArquivos.SistemaDeArquivosColaboradorVendedorRepository;
+import entities.sistemaDeArquivos.SistemaDeArquivosConcessionariaRepository;
 import entities.sistemaDeArquivos.SistemaDeArquivosVeiculoRepository;
 
 public class App {
@@ -30,6 +33,11 @@ public class App {
         Cliente cliente = repoCliente.getClienteCpf(cpf);
         String estadoCivil = String.valueOf(cliente.getEstadoCivil()).toLowerCase();
         System.out.println(estadoCivil);
+
+        // @Teste SistemaDeArquivosConcessionariaRepository;
+        ConcessionariaRepository repoConcessionaria = new SistemaDeArquivosConcessionariaRepository();
+        Concessionaria concessionaria = repoConcessionaria.getIntance();
+        System.out.println(concessionaria.getNome());
         System.out.println("APROVADO");
     }
 }
