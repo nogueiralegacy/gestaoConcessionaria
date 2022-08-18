@@ -70,23 +70,4 @@ public abstract class Pessoa {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String toString() {
-        String dadosPessoa = null;
-
-        dadosPessoa += getNome() + "," + getEstadoCivil().toString().toLowerCase();
-        dadosPessoa += ", portador da célula de identidade R.G. n° " + getRg();
-        dadosPessoa += "e CPF n° " + getCpf();
-        dadosPessoa += ", residente e domiciliar à rua: " + getEndereco().getRua();
-        dadosPessoa += ", n°: " + getEndereco().getNumero();
-        dadosPessoa += ", bairro: " + getEndereco().getBairro();
-        dadosPessoa += ", cep: " + getEndereco().getCep();
-        dadosPessoa += ", cidade: " + getEndereco().getCidade();
-        dadosPessoa += ", estado: " + getEndereco().getEstado() + ".\n";
-        dadosPessoa += "Telefone: " + getContato().getTelefone();
-        dadosPessoa += "Email: " + getContato().getEmail();
-
-        return dadosPessoa;
-    }
-
 }

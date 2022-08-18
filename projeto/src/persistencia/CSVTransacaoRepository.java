@@ -7,7 +7,7 @@ import java.util.List;
 import negocio.Transacao;
 import negocio.TransacaoRepository;
 
-public class SistemaDeArquivosTransacaoRepository implements TransacaoRepository {
+public class CSVTransacaoRepository implements TransacaoRepository {
 
     @Override
     public List<Transacao> getAll() {
@@ -47,7 +47,7 @@ public class SistemaDeArquivosTransacaoRepository implements TransacaoRepository
             String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\transacoes.txt";
 
             fw = new FileWriter(arquivo, true);
-            fw.write(String.valueOf(transacao.getStatus());
+            fw.write(String.valueOf(transacao.getStatus()));
 
             fw.close();
         } catch (Exception e) {

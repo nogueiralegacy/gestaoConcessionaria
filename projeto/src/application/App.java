@@ -8,36 +8,35 @@ import negocio.Concessionaria;
 import negocio.ConcessionariaRepository;
 import negocio.Veiculo;
 import negocio.VeiculoRepository;
-import persistencia.SistemaDeArquivosClienteRepository;
-import persistencia.SistemaDeArquivosColaboradorVendedorRepository;
-import persistencia.SistemaDeArquivosConcessionariaRepository;
-import persistencia.SistemaDeArquivosVeiculoRepository;
+import persistencia.CSVClienteRepository;
+import persistencia.CSVColaboradorVendedorRepository;
+import persistencia.CSVConcessionariaRepository;
+import persistencia.CSVVeiculoRepository;
 
 public class App {
     public static void main(String[] args) throws Exception {
         // @Teste SistemaDeArquivosVeiculoRepository;
         String placa = "PRW6D02";
-        VeiculoRepository repoVei = new SistemaDeArquivosVeiculoRepository();
+        VeiculoRepository repoVei = new CSVVeiculoRepository();
         Veiculo veiculo = repoVei.getVeiculoPlaca(placa);
         System.out.println(veiculo.isUsado());
 
         // @Teste SistemaDeArquivosColaboradorVendedorRepository;
         int id = 001;
-        ColaboradorVendedorRepository repoCola = new SistemaDeArquivosColaboradorVendedorRepository();
+        ColaboradorVendedorRepository repoCola = new CSVColaboradorVendedorRepository();
         ColaboradorVendedor colaboradorVendedor = repoCola.getColaboradorVendedorId(id);
         System.out.println(colaboradorVendedor.getSalarioBase());
 
         // @Teste SistemaDeArquivosClienteRepository;
         String cpf = "020672779-12";
-        ClienteRepository repoCliente = new SistemaDeArquivosClienteRepository();
+        ClienteRepository repoCliente = new CSVClienteRepository();
         Cliente cliente = repoCliente.getClienteCpf(cpf);
-        String estadoCivil = String.valueOf(cliente.getEstadoCivil()).toLowerCase();
-        System.out.println(estadoCivil);
+        System.out.println(cliente.toString());
 
         // @Teste SistemaDeArquivosConcessionariaRepository;
-        ConcessionariaRepository repoConcessionaria = new SistemaDeArquivosConcessionariaRepository();
+        ConcessionariaRepository repoConcessionaria = new CSVConcessionariaRepository();
         Concessionaria concessionaria = repoConcessionaria.getIntance();
-        System.out.println(concessionaria.getNome());
+        System.out.println(concessionaria.toString());
         System.out.println("APROVADO");
     }
 }

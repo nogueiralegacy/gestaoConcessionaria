@@ -9,7 +9,7 @@ import negocio.ConcessionariaRepository;
 import negocio.Contato;
 import negocio.Endereco;
 
-public class SistemaDeArquivosConcessionariaRepository implements ConcessionariaRepository {
+public class CSVConcessionariaRepository implements ConcessionariaRepository {
 
     @Override
     public Concessionaria getIntance() throws IOException {

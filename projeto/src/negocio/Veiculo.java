@@ -132,4 +132,22 @@ public class Veiculo {
         this.placa = placa;
     }
 
+    public String toString() {
+        String dadosVeiculo = "";
+
+        dadosVeiculo += modelo + ";";
+        dadosVeiculo += ano + ";";
+        dadosVeiculo += marca + ";";
+        dadosVeiculo += valorComercial + ";";
+        dadosVeiculo += chassi + ";";
+        dadosVeiculo += cor + ";";
+        dadosVeiculo += kilometragem + ";";
+        dadosVeiculo += renavam + ";";
+        dadosVeiculo += placa + ";";
+        dadosVeiculo += categoria + ";";
+        dadosVeiculo += adicionais + ";";
+
+        return dadosVeiculo;
+    }
+
 }

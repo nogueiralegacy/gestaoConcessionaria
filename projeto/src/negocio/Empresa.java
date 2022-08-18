@@ -46,18 +46,12 @@ public abstract class Empresa {
     }
 
     public String toString() {
-        String dadosEmpresa = null;
+        String dadosEmpresa = "";
 
-        dadosEmpresa += getNome() + ",";
-        dadosEmpresa += ", portador do cpnj n° " + getCnpj();
-        dadosEmpresa += ", endereço da sede da empresa na rua: " + getEndereco().getRua();
-        dadosEmpresa += ", n°: " + getEndereco().getNumero();
-        dadosEmpresa += ", bairro: " + getEndereco().getBairro();
-        dadosEmpresa += ", cep: " + getEndereco().getCep();
-        dadosEmpresa += ", cidade: " + getEndereco().getCidade();
-        dadosEmpresa += ", estado: " + getEndereco().getEstado() + ".\n";
-        dadosEmpresa += "Telefone: " + getContato().getTelefone();
-        dadosEmpresa += "Email: " + getContato().getEmail();
+        dadosEmpresa += getNome() + ";";
+        dadosEmpresa += getCnpj() + ";";
+        dadosEmpresa += endereco.toString() + ";";
+        dadosEmpresa += contato.toString() + ";";
 
         return dadosEmpresa;
     }

@@ -7,7 +7,7 @@ import java.io.IOException;
 import negocio.Veiculo;
 import negocio.VeiculoRepository;
 
-public class SistemaDeArquivosVeiculoRepository implements VeiculoRepository {
+public class CSVVeiculoRepository implements VeiculoRepository {
 
     @Override
     public Veiculo getVeiculoPlaca(String placaParaBuscar) throws IOException {

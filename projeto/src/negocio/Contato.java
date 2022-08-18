@@ -29,4 +29,12 @@ public class Contato {
         this.email = email;
     }
 
+    public String toString() {
+        String dadosContato = "";
+
+        dadosContato += email + ";";
+        dadosContato += telefone;
+
+        return dadosContato;
+    }
 }

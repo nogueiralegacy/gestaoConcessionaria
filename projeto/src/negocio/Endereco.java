@@ -76,4 +76,16 @@ public class Endereco { // ideia de ter como base um arquivo .csv com a base de 
         this.complemento = complemento;
     }
 
+    public String toString() {
+        String dadosEndereco = "";
+
+        dadosEndereco += rua + ";";
+        dadosEndereco += numero + ";";
+        dadosEndereco += bairro + ";";
+        dadosEndereco += cep + ";";
+        dadosEndereco += cidade + ";";
+        dadosEndereco += estado;
+
+        return dadosEndereco;
+    }
 }
