@@ -1,6 +1,6 @@
 package application;
 
-import entities.grupamentoCliente.Cliente;
+
 import entities.grupamentoColaboradorVendedor.ColaboradorVendedor;
 import entities.grupamentoColaboradorVendedor.ColaboradorVendedorRepository;
 import entities.grupamentoPessoa.ClienteRepository;
