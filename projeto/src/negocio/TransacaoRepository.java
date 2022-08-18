@@ -1,5 +1,6 @@
 package negocio;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface TransacaoRepository {
@@ -13,6 +14,6 @@ public interface TransacaoRepository {
 
     public List<Transacao> getCompras();
 
-    public void saveTransacao();
+    public void saveTransacao(Transacao transacao) throws IOException;
 
 }
