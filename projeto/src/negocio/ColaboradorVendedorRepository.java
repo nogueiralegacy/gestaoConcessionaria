@@ -17,10 +17,8 @@ public interface ColaboradorVendedorRepository {
      * Armazena o colaborador vendedor fornecido.
      * 
      * @param colaboradorVendedor O colaborador vendedor a ser armazenado.
-     * @return O colaborador vendedor armazenado, possivelmente com o
-     *         identificador único fornecido pelo mecanismo de
-     *         persistência ou {@code null} caso ocorra falha na
-     *         persistência.
+     * @return O colaborador vendedor armazenado ou {@code null} caso
+     *         ocorra falha na persistência.
      */
     public ColaboradorVendedor persiste(ColaboradorVendedor colaboradorVendedor);
 }
