@@ -1,9 +1,9 @@
 package application;
 
 import entities.grupamentoCliente.Cliente;
-import entities.grupamentoCliente.grupamentoPessoa.ClienteRepository;
 import entities.grupamentoColaboradorVendedor.ColaboradorVendedor;
 import entities.grupamentoColaboradorVendedor.ColaboradorVendedorRepository;
+import entities.grupamentoPessoa.ClienteRepository;
 import entities.grupamentoVeiculo.Veiculo;
 import entities.grupamentoVeiculo.VeiculoRepository;
 import entities.sistemaDeArquivos.SistemaDeArquivosClienteRepository;

@@ -1,4 +1,4 @@
-package entities.grupamentoCliente.grupamentoPessoa;
+package entities.grupamentoPessoa;
 
 import java.io.IOException;
 

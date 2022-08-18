@@ -1,9 +1,9 @@
-package entities.grupamentoCliente.grupamentoPessoa;
+package entities.grupamentoPessoa;
 
 import entities.grupamentoContato.Contato;
 import entities.grupamentoEndereco.Endereco;
 
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private Contato contato;
     private Endereco endereco;

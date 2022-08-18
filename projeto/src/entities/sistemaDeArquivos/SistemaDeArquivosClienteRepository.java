@@ -5,10 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import entities.grupamentoCliente.Cliente;
-import entities.grupamentoCliente.grupamentoPessoa.ClienteRepository;
-import entities.grupamentoCliente.grupamentoPessoa.EstadoCivil;
 import entities.grupamentoContato.Contato;
 import entities.grupamentoEndereco.Endereco;
+import entities.grupamentoPessoa.ClienteRepository;
+import entities.grupamentoPessoa.EstadoCivil;
 
 public class SistemaDeArquivosClienteRepository implements ClienteRepository {
 
