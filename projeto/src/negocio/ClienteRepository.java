@@ -12,7 +12,7 @@ public interface ClienteRepository {
      *         caso nâo exista cliente para o CPF.
      * @throws IOException Situaçâo excepcional de I/O.
      */
-    public Cliente getClienteCpf(String cpf) throws IOException;
+    public Cliente porCpf(String cpf) throws IOException;
 
     /**
      * Armazena o cliente fornecido.
