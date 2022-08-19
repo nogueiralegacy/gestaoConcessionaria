@@ -30,7 +30,7 @@ public class Teste {
         // @Teste SistemaDeArquivosClienteRepository;
         String cpf = "020672779-12";
         ClienteRepository repoCliente = new CSVClienteRepository();
-        Cliente cliente = repoCliente.getClienteCpf(cpf);
+        Cliente cliente = repoCliente.porCpf(cpf);
         System.out.println(cliente.toString());
 
         // @Teste SistemaDeArquivosConcessionariaRepository;

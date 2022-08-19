@@ -45,7 +45,7 @@ public class CSVClienteRepository implements ClienteRepository {
     }
 
     @Override
-    public Cliente getClienteCpf(String cpfParaBuscar) throws IOException {
+    public Cliente porCpf(String cpfParaBuscar) throws IOException {
         FileReader r = null;
         BufferedReader bf = null;
 

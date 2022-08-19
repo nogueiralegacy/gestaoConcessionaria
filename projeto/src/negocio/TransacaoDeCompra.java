@@ -2,8 +2,8 @@ package negocio;
 
 public class TransacaoDeCompra extends Transacao {
 
-    public TransacaoDeCompra(Cliente cliente, Concessionaria concessionaria, Veiculo veiculo, TransacaoStatus status,
+    public TransacaoDeCompra(Cliente cliente, Concessionaria concessionaria, Veiculo veiculo,
             double montante, long id) {
-        super(cliente, concessionaria, veiculo, status, montante, id);
+        super(cliente, concessionaria, veiculo, TransacaoStatus.COMPRA, montante, id);
     }
 }
