@@ -15,7 +15,8 @@ public interface ConcessionariaRepository {
     /**
      * Recupera os dados, em formato csv, de concessionaria.
      * 
-     * @return Os dados , em formato csv, da concessionária.
+     * @return Os dados , em formato csv, da concessionária ou {@code null}
+     *         caso não tenha os dados de concessionária.
      *
      */
     public String dadosEmCsv() throws IOException;

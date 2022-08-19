@@ -14,6 +14,16 @@ public interface TransacaoRepository {
 
     public List<Transacao> getCompras();
 
-    public void saveTransacao(Transacao transacao) throws IOException;
+    /**
+     * Armazena a transacao fornecida.
+     * 
+     * @param transacao A transacao a ser armazenada.
+     * @return Retorna a transacao armazenada possivelmente com um
+     *         identificador único, fornecido pelo sistema de
+     *         armazenamento ou {@code null} caso ocorrer falha na
+     *         persistência.
+     * @throws IOException Excepcionalidade de I/O.
+     */
+    public Transacao persiste(Transacao transacao) throws IOException;
 
 }

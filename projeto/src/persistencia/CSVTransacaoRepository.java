@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 import negocio.ClienteRepository;
+import negocio.ConcessionariaRepository;
 import negocio.Transacao;
 import negocio.TransacaoRepository;
 
@@ -43,7 +44,7 @@ public class CSVTransacaoRepository implements TransacaoRepository {
     }
 
     @Override
-    public void saveTransacao(Transacao transacao) throws IOException {
+    public Transacao persiste(Transacao transacao) throws IOException {
 
         try {
             FileWriter fw;
@@ -59,10 +60,18 @@ public class CSVTransacaoRepository implements TransacaoRepository {
             String dadosCsvCliente = repoCliente.dadosEmCsvPorCpf(transacao.getCliente().getCpf());
             fw.write(dadosCsvCliente);
 
+            ConcessionariaRepository repoConcessionaria = new CSVConcessionariaRepository();
+            String dadosConcessionaria = repoConcessionaria.dadosEmCsv();
+            fw.write(dadosConcessionaria);
+
             fw.close();
+            return null;
+
         } catch (Exception e) {
 
         }
+
+        return null;
     }
 
 }
