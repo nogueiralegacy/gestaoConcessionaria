@@ -4,7 +4,6 @@ public class Veiculo {
     private String modelo;
     private int ano;
     private String marca;
-    private double valorComercial;
     private String chassi; // código VIN;
     private String cor;
     private boolean usado;
@@ -14,14 +13,13 @@ public class Veiculo {
     private String categoria;
     private String adicionais;
 
-    public Veiculo(String modelo, int ano, String marca, double valorComercial, String chassi, String cor,
+    public Veiculo(String modelo, int ano, String marca, String chassi, String cor,
             int kilometragem, String renavam,
             String placa,
             String categoria, String adicionais) {
         this.modelo = modelo;
         this.ano = ano;
         this.marca = marca;
-        this.valorComercial = valorComercial;
         this.chassi = chassi;
         this.cor = cor;
         this.kilometragem = kilometragem;
@@ -42,14 +40,6 @@ public class Veiculo {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
-    }
-
-    public double getValorComercial() {
-        return valorComercial;
-    }
-
-    public void setValorComercial(double valorComercial) {
-        this.valorComercial = valorComercial;
     }
 
     public int getAno() {
