@@ -4,10 +4,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+import negocio.ClienteRepository;
 import negocio.Transacao;
 import negocio.TransacaoRepository;
 
 public class CSVTransacaoRepository implements TransacaoRepository {
+
+    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\transacoes.txt";
 
     @Override
     public List<Transacao> getAll() {
@@ -44,10 +47,17 @@ public class CSVTransacaoRepository implements TransacaoRepository {
 
         try {
             FileWriter fw;
-            String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\transacoes.txt";
 
             fw = new FileWriter(arquivo, true);
+
+            fw.write(String.valueOf(transacao.getId()));
             fw.write(String.valueOf(transacao.getStatus()));
+            fw.write(String.valueOf(transacao.getDataHora()));
+            fw.write(String.valueOf(transacao.getMontante()));
+
+            ClienteRepository repoCliente = new CSVClienteRepository();
+            String dadosCsvCliente = repoCliente.dadosEmCsvPorCpf(transacao.getCliente().getCpf());
+            fw.write(dadosCsvCliente);
 
             fw.close();
         } catch (Exception e) {

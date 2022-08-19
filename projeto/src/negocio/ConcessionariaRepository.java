@@ -11,4 +11,12 @@ public interface ConcessionariaRepository {
      * @throws IOException Situação excepcional de I/O.
      */
     public Concessionaria getIntance() throws IOException;
+
+    /**
+     * Recupera os dados, em formato csv, de concessionaria.
+     * 
+     * @return Os dados , em formato csv, da concessionária.
+     *
+     */
+    public String dadosEmCsv() throws IOException;
 }

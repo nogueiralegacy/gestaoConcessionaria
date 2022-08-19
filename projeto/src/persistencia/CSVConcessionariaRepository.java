@@ -11,11 +11,27 @@ import negocio.Endereco;
 
 public class CSVConcessionariaRepository implements ConcessionariaRepository {
 
+    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\concessionaria.txt";
+
+    @Override
+    public String dadosEmCsv() throws IOException {
+        try {
+            FileReader fr = new FileReader(arquivo);
+            try (BufferedReader bf = new BufferedReader(fr)) {
+                String linha = bf.readLine();
+
+                return linha;
+            }
+        } catch (Exception e) {
+            System.out.println("ERRO: " + e.getMessage());
+        }
+        return null;
+    }
+
     @Override
     public Concessionaria getIntance() throws IOException {
         FileReader r = null;
         BufferedReader bf = null;
-        String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\concessionaria.txt";
 
         try {
             r = new FileReader(arquivo);

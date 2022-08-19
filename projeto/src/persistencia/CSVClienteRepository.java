@@ -15,6 +15,27 @@ public class CSVClienteRepository implements ClienteRepository {
     String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\clientes.txt";
 
     @Override
+    public String dadosEmCsvPorCpf(String cpf) throws IOException {
+        try {
+            FileReader fr = new FileReader(arquivo);
+            try (BufferedReader bf = new BufferedReader(fr)) {
+                String linha;
+                String[] campos = new String[13];
+                while ((linha = bf.readLine()) != null) {
+                    campos = linha.split(";");
+
+                    if (campos[11].equals(cpf)) {
+                        return linha;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("ERRO: " + e.getMessage());
+        }
+        return null;
+    }
+
+    @Override
     public Cliente persiste(Cliente cliente) {
         try {
             FileWriter fw;
