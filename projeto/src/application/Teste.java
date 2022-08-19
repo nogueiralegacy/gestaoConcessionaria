@@ -13,7 +13,7 @@ import persistencia.CSVColaboradorVendedorRepository;
 import persistencia.CSVConcessionariaRepository;
 import persistencia.CSVVeiculoRepository;
 
-public class App {
+public class Teste {
     public static void main(String[] args) throws Exception {
         // @Teste SistemaDeArquivosVeiculoRepository;
         String placa = "PRW6D02";

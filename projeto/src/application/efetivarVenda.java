@@ -1,5 +1,5 @@
 package application;
 
-public class efetivarVenda {
+public class EfetivarVenda {
 
 }

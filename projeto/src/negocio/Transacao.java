@@ -12,12 +12,12 @@ public abstract class Transacao {
     private long id;
 
     public Transacao(Cliente cliente, Concessionaria concessionaria, Veiculo veiculo,
-            TransacaoStatus status, LocalDateTime dataHora, double montante, long id) {
+            TransacaoStatus status, double montante, long id) {
         this.cliente = cliente;
         this.concessionaria = concessionaria;
         this.veiculo = veiculo;
         this.status = status;
-        this.dataHora = dataHora;
+        this.dataHora = LocalDateTime.now();
         this.montante = montante;
         this.id = id;
     }
