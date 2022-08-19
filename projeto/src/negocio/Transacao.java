@@ -6,18 +6,20 @@ public abstract class Transacao {
     private Cliente cliente;
     private Concessionaria concessionaria;
     private Veiculo veiculo;
-    private ColaboradorVendedor colaboradorVendedor;
     private TransacaoStatus status;
     private LocalDateTime dataHora;
+    private double montante;
+    private long id;
 
     public Transacao(Cliente cliente, Concessionaria concessionaria, Veiculo veiculo,
-            ColaboradorVendedor colaboradorVendedor, TransacaoStatus status, LocalDateTime dataHora) {
+            TransacaoStatus status, LocalDateTime dataHora, double montante, long id) {
         this.cliente = cliente;
         this.concessionaria = concessionaria;
         this.veiculo = veiculo;
-        this.colaboradorVendedor = colaboradorVendedor;
         this.status = status;
         this.dataHora = dataHora;
+        this.montante = montante;
+        this.id = id;
     }
 
     public Cliente getCliente() {
@@ -34,14 +36,6 @@ public abstract class Transacao {
 
     public void setVeiculo(Veiculo veiculo) {
         this.veiculo = veiculo;
-    }
-
-    public ColaboradorVendedor getColaboradorVendedor() {
-        return colaboradorVendedor;
-    }
-
-    public void setColaboradorVendedor(ColaboradorVendedor colaboradorVendedor) {
-        this.colaboradorVendedor = colaboradorVendedor;
     }
 
     public TransacaoStatus getStatus() {
@@ -66,5 +60,21 @@ public abstract class Transacao {
 
     public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
+    }
+
+    public double getMontante() {
+        return montante;
+    }
+
+    public void setMontante(double montante) {
+        this.montante = montante;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
