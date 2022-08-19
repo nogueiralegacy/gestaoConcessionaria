@@ -20,9 +20,9 @@ public class CSVVeiculoRepository implements VeiculoRepository {
             String linhaVeiculo = veiculo.getModelo() + ";";
             linhaVeiculo += veiculo.getAno() + ";";
             linhaVeiculo += veiculo.getMarca() + ";";
-            linhaVeiculo += veiculo.getValorComercial() + ";";
             linhaVeiculo += veiculo.getChassi() + ";";
             linhaVeiculo += veiculo.getCor() + ";";
+            linhaVeiculo += veiculo.getKilometragem() + ";";
             linhaVeiculo += veiculo.getRenavam() + ";";
             linhaVeiculo += veiculo.getPlaca() + ";";
             linhaVeiculo += veiculo.getCategoria() + ";";
@@ -49,7 +49,7 @@ public class CSVVeiculoRepository implements VeiculoRepository {
             bf = new BufferedReader(r);
 
             String linha;
-            String[] campos = new String[11];
+            String[] campos = new String[10];
 
             while ((linha = bf.readLine()) != null) {
                 campos = linha.split(";");
@@ -57,16 +57,15 @@ public class CSVVeiculoRepository implements VeiculoRepository {
                     String modelo = campos[0];
                     int ano = Integer.parseInt(campos[1]);
                     String marca = campos[2];
-                    double valorComercial = Double.parseDouble(campos[3]);
-                    String chassi = campos[4];
-                    String cor = campos[5];
-                    int kilometragem = Integer.parseInt(campos[6]);
-                    String renavam = campos[7];
-                    String placa = campos[8];
-                    String categoria = campos[9];
-                    String adicionais = campos[10];
+                    String chassi = campos[3];
+                    String cor = campos[4];
+                    int kilometragem = Integer.parseInt(campos[5]);
+                    String renavam = campos[6];
+                    String placa = campos[7];
+                    String categoria = campos[8];
+                    String adicionais = campos[9];
 
-                    return new Veiculo(modelo, ano, marca, valorComercial, chassi, cor, kilometragem,
+                    return new Veiculo(modelo, ano, marca, chassi, cor, kilometragem,
                             renavam, placa, categoria, adicionais);
                 }
 
