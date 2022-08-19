@@ -26,7 +26,7 @@ public class CSVVeiculoRepository implements VeiculoRepository {
             linhaVeiculo += veiculo.getRenavam() + ";";
             linhaVeiculo += veiculo.getPlaca() + ";";
             linhaVeiculo += veiculo.getCategoria() + ";";
-            linhaVeiculo += veiculo.getAdicionais() + ";";
+            linhaVeiculo += veiculo.getAdicionais();
 
             fw.write(linhaVeiculo);
             fw.close();

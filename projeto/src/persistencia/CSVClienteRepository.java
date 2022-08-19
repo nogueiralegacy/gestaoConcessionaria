@@ -31,7 +31,7 @@ public class CSVClienteRepository implements ClienteRepository {
             linhaCliente += cliente.getEndereco().getComplemento() + ";";
             linhaCliente += cliente.getEstadoCivil() + ";";
             linhaCliente += cliente.getCpf() + ";";
-            linhaCliente += cliente.getRg() + ";";
+            linhaCliente += cliente.getRg();
 
             fw.write(linhaCliente);
             fw.close();

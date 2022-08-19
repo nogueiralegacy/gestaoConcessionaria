@@ -34,7 +34,7 @@ public class CSVColaboradorVendedorRepository implements ColaboradorVendedorRepo
             linhaColaboradorVendedor += colaboradorVendedor.getCpf() + ";";
             linhaColaboradorVendedor += colaboradorVendedor.getRg() + ";";
             linhaColaboradorVendedor += colaboradorVendedor.getSalarioBase() + ";";
-            linhaColaboradorVendedor += colaboradorVendedor.getId() + ";";
+            linhaColaboradorVendedor += colaboradorVendedor.getId();
 
             fw.write(linhaColaboradorVendedor);
             fw.close();
