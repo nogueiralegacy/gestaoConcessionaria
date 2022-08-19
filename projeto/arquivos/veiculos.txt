@@ -1,2 +1,2 @@
-Amarok;2022;Volkswagen;230000.00;9BG116GW04C400001;branco;12000;00891353364;BRA2E19;automóvel;vidro elétrico, sistema de som, ar-condicionado;
-Celta;2016;Chevrolet;32000.00;7FS023EA69C40001;preto;67000;00569754615;PRW6D02;automóvel;sistema de som;
+Amarok;2022;Volkswagen;9BG116GW04C400001;branco;12000;00891353364;BRA2E19;automóvel;vidro elétrico, sistema de som, ar-condicionado
+Celta;2016;Chevrolet;7FS023EPA69C40001;preto;67000;00569754615;PRW6D02;automóvel;sistema de som
