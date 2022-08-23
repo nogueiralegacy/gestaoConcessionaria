@@ -9,6 +9,7 @@ public class TransacaoDeVenda extends Transacao {
         this.colaboradorVendedor = colaboradorVendedor;
     }
 
+    @Override
     public ColaboradorVendedor getColaboradorVendedor() {
         return colaboradorVendedor;
     }

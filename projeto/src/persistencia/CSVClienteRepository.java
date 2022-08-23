@@ -40,7 +40,8 @@ public class CSVClienteRepository implements ClienteRepository {
         try {
             FileWriter fw;
             fw = new FileWriter(arquivo, true);
-            String linhaCliente = cliente.getNome() + ";";
+            String linhaCliente = "\n";
+            linhaCliente += cliente.getNome() + ";";
             linhaCliente += cliente.getContato().getEmail() + ";";
             linhaCliente += cliente.getContato().getTelefone() + ";";
             linhaCliente += cliente.getEndereco().getCidade() + ";";
@@ -59,7 +60,7 @@ public class CSVClienteRepository implements ClienteRepository {
 
             return cliente;
         } catch (Exception e) {
-            System.out.println("EROO: " + e.getMessage());
+            System.out.println("ERRO: " + e.getMessage());
 
             return null;
         }

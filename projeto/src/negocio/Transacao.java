@@ -77,4 +77,8 @@ public abstract class Transacao {
     public void setId(long id) {
         this.id = id;
     }
+
+    public ColaboradorVendedor getColaboradorVendedor() {
+        return null;
+    }
 }
