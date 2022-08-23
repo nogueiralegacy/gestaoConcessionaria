@@ -20,7 +20,8 @@ public class CSVColaboradorVendedorRepository implements ColaboradorVendedorRepo
             FileWriter fw;
             fw = new FileWriter(arquivo, true);
 
-            String linhaColaboradorVendedor = colaboradorVendedor.getNome();
+            String linhaColaboradorVendedor = "\n";
+            linhaColaboradorVendedor += colaboradorVendedor.getNome();
             linhaColaboradorVendedor += colaboradorVendedor.getContato().getEmail() + ";";
             linhaColaboradorVendedor += colaboradorVendedor.getContato().getTelefone() + ";";
             linhaColaboradorVendedor += colaboradorVendedor.getEndereco().getCidade() + ";";
@@ -48,6 +49,29 @@ public class CSVColaboradorVendedorRepository implements ColaboradorVendedorRepo
     }
 
     @Override
+    public String dadosEmCsvPorId(int id) throws IOException {
+        try {
+            FileReader fr = new FileReader(arquivo);
+            try (BufferedReader bf = new BufferedReader(fr)) {
+                String linha;
+                String[] campos = new String[15];
+
+                while ((linha = bf.readLine()) != null) {
+                    campos = linha.split(";");
+
+                    if (Integer.parseInt(campos[14]) == id) {
+                        return linha;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("ERRO: " + e.getMessage());
+        }
+
+        return null;
+    }
+
+    @Override
     public ColaboradorVendedor porId(int idParaBuscar) throws IOException {
 
         FileReader r = null;
@@ -59,7 +83,7 @@ public class CSVColaboradorVendedorRepository implements ColaboradorVendedorRepo
             bf = new BufferedReader(r);
 
             String linha;
-            String[] campos = new String[13];
+            String[] campos = new String[15];
 
             while ((linha = bf.readLine()) != null) {
                 campos = linha.split(";");

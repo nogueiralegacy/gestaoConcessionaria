@@ -24,4 +24,13 @@ public interface VeiculoRepository {
      */
     public Veiculo persiste(Veiculo veiculo);
 
+    /**
+     * Recupera os dados, em csv, do veículo para a placa fornecida.
+     * 
+     * @param placa A placa do veículo.
+     * @return Os dados do veículo para a placa fronecida em formato csv ou
+     *         {@code null} caso não exista veículo para a placa fornecida.
+     * @throws IOException Excepcionalidade de I/O.
+     */
+    public String dadosEmCsvPorPlaca(String placa) throws IOException;
 }

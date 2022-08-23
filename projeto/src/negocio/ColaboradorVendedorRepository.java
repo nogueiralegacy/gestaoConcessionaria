@@ -21,4 +21,16 @@ public interface ColaboradorVendedorRepository {
      *         ocorra falha na persistência.
      */
     public ColaboradorVendedor persiste(ColaboradorVendedor colaboradorVendedor);
+
+    /**
+     * Recupera os dados do colaborador vendedor em formato csv.
+     * 
+     * @param id O identificador único do colaborador vendedor.
+     * @return Os dados em formato csv do colaborador vendedor para o
+     *         o identificadoe único fornecido ou {@code null} caso
+     *         não exista colaborador vendedor para o identificador
+     *         único fornecido.
+     * @throws IOException Excepcionalidade de I/O.
+     */
+    public String dadosEmCsvPorId(int id) throws IOException;
 }

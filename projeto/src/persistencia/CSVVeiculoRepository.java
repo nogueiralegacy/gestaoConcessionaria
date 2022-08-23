@@ -17,7 +17,8 @@ public class CSVVeiculoRepository implements VeiculoRepository {
             FileWriter fw;
             fw = new FileWriter(arquivo, true);
 
-            String linhaVeiculo = veiculo.getModelo() + ";";
+            String linhaVeiculo = "\n";
+            linhaVeiculo += veiculo.getModelo() + ";";
             linhaVeiculo += veiculo.getAno() + ";";
             linhaVeiculo += veiculo.getMarca() + ";";
             linhaVeiculo += veiculo.getChassi() + ";";
@@ -40,6 +41,27 @@ public class CSVVeiculoRepository implements VeiculoRepository {
     }
 
     @Override
+    public String dadosEmCsvPorPlaca(String placa) throws IOException {
+        try {
+            FileReader fr = new FileReader(arquivo);
+            try (BufferedReader bf = new BufferedReader(fr)) {
+                String linha;
+                String[] campos = new String[10];
+                while ((linha = bf.readLine()) != null) {
+                    campos = linha.split(";");
+
+                    if (campos[7].equals(placa)) {
+                        return linha;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("ERRO: " + e.getMessage());
+        }
+        return null;
+    }
+
+    @Override
     public Veiculo porPlaca(String placaParaBuscar) throws IOException {
         FileReader r = null;
         BufferedReader bf = null;
@@ -53,7 +75,7 @@ public class CSVVeiculoRepository implements VeiculoRepository {
 
             while ((linha = bf.readLine()) != null) {
                 campos = linha.split(";");
-                if (campos[8].equals(placaParaBuscar)) {
+                if (campos[7].equals(placaParaBuscar)) {
                     String modelo = campos[0];
                     int ano = Integer.parseInt(campos[1]);
                     String marca = campos[2];
