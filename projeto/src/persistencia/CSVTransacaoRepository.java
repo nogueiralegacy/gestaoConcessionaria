@@ -15,7 +15,7 @@ import negocio.VeiculoRepository;
 
 public class CSVTransacaoRepository implements TransacaoRepository {
 
-    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\transacoes.txt";
+    String arquivo = "projetos/arquivos/transacoes.txt";
 
     @Override
     public List<Transacao> getAll() {
@@ -47,6 +47,7 @@ public class CSVTransacaoRepository implements TransacaoRepository {
         return null;
     }
 
+    // escreve uma transacao em um arquivo
     @Override
     public Transacao persiste(Transacao transacao) throws IOException {
 
@@ -71,6 +72,7 @@ public class CSVTransacaoRepository implements TransacaoRepository {
             VeiculoRepository repoVeiculo = new CSVVeiculoRepository();
             String dadosVeiculo = repoVeiculo.dadosEmCsvPorPlaca(transacao.getVeiculo().getPlaca());
             fw.write(dadosVeiculo);
+
 
             if (transacao.getStatus() == TransacaoStatus.VENDA) {
                 fw.write(";");

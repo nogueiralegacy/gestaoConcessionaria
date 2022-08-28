@@ -12,7 +12,7 @@ import negocio.Endereco;
 import negocio.EstadoCivil;
 
 public class CSVClienteRepository implements ClienteRepository {
-    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\clientes.txt";
+    String arquivo = "projeto/arquivos/clientes.txt";
 
     @Override
     public String dadosEmCsvPorCpf(String cpf) throws IOException {

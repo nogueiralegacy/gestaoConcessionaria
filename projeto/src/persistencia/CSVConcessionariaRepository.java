@@ -11,7 +11,7 @@ import negocio.Endereco;
 
 public class CSVConcessionariaRepository implements ConcessionariaRepository {
 
-    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\concessionaria.txt";
+    String arquivo = "projeto/arquivos/concessionaria.txt";
 
     @Override
     public String dadosEmCsv() throws IOException {

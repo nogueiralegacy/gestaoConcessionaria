@@ -25,7 +25,7 @@ public class Teste {
         System.out.println(veiculo.isUsado());
 
         // @Teste SistemaDeArquivosColaboradorVendedorRepository;
-        int idDoColaboradroVendedor = 001;
+        int idDoColaboradroVendedor = 1;
         ColaboradorVendedorRepository repoColaboradorVendedor = new CSVColaboradorVendedorRepository();
         ColaboradorVendedor colaboradorVendedor = repoColaboradorVendedor.porId(idDoColaboradroVendedor);
         System.out.println(colaboradorVendedor.getId());
@@ -43,7 +43,7 @@ public class Teste {
 
         EfetivarVenda efetivarVenda = new EfetivarVenda();
 
-        TransacaoDeVenda transacaoDeVenda = efetivarVenda.criaTransacaoDeVenda(cpf, placa, 100000, 01,
+        TransacaoDeVenda transacaoDeVenda = efetivarVenda.criaTransacaoDeVenda(cpf, placa, 100000, 1,
                 7);
         TransacaoRepository repoTransacao = new CSVTransacaoRepository();
         repoTransacao.persiste(transacaoDeVenda);

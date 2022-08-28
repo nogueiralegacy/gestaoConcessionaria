@@ -14,6 +14,8 @@ public interface TransacaoRepository {
 
     public List<Transacao> getCompras();
 
+
+
     /**
      * Armazena a transacao fornecida.
      * 

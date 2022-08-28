@@ -9,13 +9,12 @@ import negocio.Veiculo;
 import negocio.VeiculoRepository;
 
 public class CSVVeiculoRepository implements VeiculoRepository {
-    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\veiculos.txt";
+    String arquivo = "projeto/arquivos/veiculos.txt";
 
     @Override
     public Veiculo persiste(Veiculo veiculo) {
         try {
-            FileWriter fw;
-            fw = new FileWriter(arquivo, true);
+            FileWriter fw = new FileWriter(arquivo, true);
 
             String linhaVeiculo = "\n";
             linhaVeiculo += veiculo.getModelo() + ";";

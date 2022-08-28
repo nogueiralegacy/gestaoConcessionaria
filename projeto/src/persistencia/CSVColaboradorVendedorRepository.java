@@ -12,7 +12,7 @@ import negocio.Endereco;
 import negocio.EstadoCivil;
 
 public class CSVColaboradorVendedorRepository implements ColaboradorVendedorRepository {
-    String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\colaboradoresVendedores.txt";
+    String arquivo = "projeto/arquivos/colaboradoresVendedores.txt";
 
     @Override
     public ColaboradorVendedor persiste(ColaboradorVendedor colaboradorVendedor) {
@@ -76,7 +76,7 @@ public class CSVColaboradorVendedorRepository implements ColaboradorVendedorRepo
 
         FileReader r = null;
         BufferedReader bf = null;
-        String arquivo = "C:\\Users\\danie\\Documents\\gestaoConcessionaria\\projeto\\arquivos\\colaboradoresVendedores.txt";
+        String arquivo = "projeto/arquivos/colaboradoresVendedores.txt";
 
         try {
             r = new FileReader(arquivo);
