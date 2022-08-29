@@ -73,7 +73,6 @@ public class CSVTransacaoRepository implements TransacaoRepository {
             String dadosVeiculo = repoVeiculo.dadosEmCsvPorPlaca(transacao.getVeiculo().getPlaca());
             fw.write(dadosVeiculo);
 
-
             if (transacao.getStatus() == TransacaoStatus.VENDA) {
                 fw.write(";");
 
