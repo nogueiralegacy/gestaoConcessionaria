@@ -86,8 +86,10 @@ public class CSVTransacaoRepository implements TransacaoRepository {
             return transacao;
 
         } catch (IOException e) {
-            return null;
+            System.out.println("ERRO: " + e.getMessage());
         }
+
+        return null;
     }
 
 }
