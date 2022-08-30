@@ -21,7 +21,7 @@ public class CSVColaboradorVendedorRepository implements ColaboradorVendedorRepo
             fw = new FileWriter(arquivo, true);
 
             String linhaColaboradorVendedor = "\n";
-            linhaColaboradorVendedor += colaboradorVendedor.getNome();
+            linhaColaboradorVendedor += colaboradorVendedor.getNome() + ";";
             linhaColaboradorVendedor += colaboradorVendedor.getContato().getEmail() + ";";
             linhaColaboradorVendedor += colaboradorVendedor.getContato().getTelefone() + ";";
             linhaColaboradorVendedor += colaboradorVendedor.getEndereco().getCidade() + ";";
