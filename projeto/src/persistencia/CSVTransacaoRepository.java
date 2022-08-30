@@ -14,8 +14,7 @@ import negocio.TransacaoStatus;
 import negocio.VeiculoRepository;
 
 public class CSVTransacaoRepository implements TransacaoRepository {
-
-    String arquivo = "projetos/arquivos/transacoes.txt";
+    String arquivo = "projeto/arquivos/transacoes.txt";
 
     @Override
     public List<Transacao> getAll() {
@@ -53,8 +52,8 @@ public class CSVTransacaoRepository implements TransacaoRepository {
 
         try {
             FileWriter fw;
-
             fw = new FileWriter(arquivo, true);
+
             fw.write("\n");
             fw.write(String.valueOf(transacao.getId()) + ";");
             fw.write(String.valueOf(transacao.getStatus()) + ";");
@@ -86,8 +85,8 @@ public class CSVTransacaoRepository implements TransacaoRepository {
             fw.close();
             return transacao;
 
-        } catch (Exception e) {
-
+        } catch (IOException e) {
+            System.out.println("ERRO: " + e.getMessage());
         }
 
         return null;
