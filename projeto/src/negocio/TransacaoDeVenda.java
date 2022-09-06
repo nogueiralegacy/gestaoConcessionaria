@@ -3,6 +3,10 @@ package negocio;
 public class TransacaoDeVenda extends Transacao {
     private ColaboradorVendedor colaboradorVendedor;
 
+    public TransacaoDeVenda() {
+        super();
+    }
+
     public TransacaoDeVenda(Cliente cliente, Concessionaria concessionaria, Veiculo veiculo,
             double montante, long id, ColaboradorVendedor colaboradorVendedor) {
         super(cliente, concessionaria, veiculo, TransacaoStatus.VENDA, montante, id);

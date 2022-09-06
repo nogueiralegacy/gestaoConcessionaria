@@ -13,6 +13,10 @@ public class Veiculo {
     private String categoria;
     private String adicionais;
 
+    public Veiculo() {
+
+    }
+
     public Veiculo(String modelo, int ano, String marca, String chassi, String cor,
             int kilometragem, String renavam,
             String placa,
