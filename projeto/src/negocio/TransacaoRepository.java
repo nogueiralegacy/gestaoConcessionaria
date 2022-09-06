@@ -1,21 +1,8 @@
 package negocio;
 
 import java.io.IOException;
-import java.util.List;
 
 public interface TransacaoRepository {
-    public List<Transacao> getAll();
-
-    public List<Transacao> getPorVendedorId();
-
-    public List<Transacao> getPorTransacaoId();
-
-    public List<Transacao> getVendas();
-
-    public List<Transacao> getCompras();
-
-
-
     /**
      * Armazena a transacao fornecida.
      * 
@@ -27,5 +14,13 @@ public interface TransacaoRepository {
      * @throws IOException Excepcionalidade de I/O.
      */
     public Transacao persiste(Transacao transacao) throws IOException;
+
+    /**
+     * Calcula o faturamento de todas as vendas.
+     * 
+     * @return Retorna a soma de todas as vendas ou 0 caso não tenha
+     *         nenhuma venda;
+     */
+    public double totalVendido();
 
 }
