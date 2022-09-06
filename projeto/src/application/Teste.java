@@ -17,6 +17,11 @@ import persistencia.CSVTransacaoRepository;
 import persistencia.CSVVeiculoRepository;
 
 public class Teste {
+
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         // @Teste SistemaDeArquivosVeiculoRepository;
         String placa = "PRW6D02";
@@ -41,15 +46,16 @@ public class Teste {
         Concessionaria concessionaria = repoConcessionaria.getIntance();
         System.out.println(concessionaria.toString());
 
-        EfetivarVenda efetivarVenda = new EfetivarVenda();
-
-        TransacaoDeVenda transacaoDeVenda = efetivarVenda.criaTransacaoDeVenda(cpf, placa, 100000, 1,
+        TransacaoDeVenda transacaoDeVenda = EfetivarVenda.criaTransacaoDeVenda(cpf, placa, 100000, 1,
                 7);
         TransacaoRepository repoTransacao = new CSVTransacaoRepository();
         repoTransacao.persiste(transacaoDeVenda);
 
         System.out.println(repoTransacao.totalVendido());
 
+        GUI.showFaturamentoTotalVendas();
+        GUI.cadastrarVeiculo();
+        GUI.showNomeDoVendedorPorId();
         System.out.println("APROVADO");
     }
 }
