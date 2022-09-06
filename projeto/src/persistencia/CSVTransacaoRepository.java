@@ -1,8 +1,9 @@
 package persistencia;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 
 import negocio.ClienteRepository;
 import negocio.ColaboradorVendedor;
@@ -15,36 +16,6 @@ import negocio.VeiculoRepository;
 
 public class CSVTransacaoRepository implements TransacaoRepository {
     String arquivo = "projeto/arquivos/transacoes.txt";
-
-    @Override
-    public List<Transacao> getAll() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public List<Transacao> getCompras() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public List<Transacao> getPorTransacaoId() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public List<Transacao> getPorVendedorId() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public List<Transacao> getVendas() {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
     // escreve uma transacao em um arquivo
     @Override
@@ -90,6 +61,28 @@ public class CSVTransacaoRepository implements TransacaoRepository {
         }
 
         return null;
+    }
+
+    @Override
+    public double totalVendido() {
+        try {
+            FileReader fr = new FileReader(arquivo);
+            try (BufferedReader bf = new BufferedReader(fr)) {
+                String linha;
+                String[] campos = new String[53];
+
+                double resultado = 0;
+                while ((linha = bf.readLine()) != null) {
+                    campos = linha.split(";");
+                    resultado += Double.parseDouble(campos[3]);
+                }
+
+                return resultado;
+            }
+        } catch (Exception e) {
+        }
+
+        return 0;
     }
 
 }

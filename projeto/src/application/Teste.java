@@ -48,6 +48,8 @@ public class Teste {
         TransacaoRepository repoTransacao = new CSVTransacaoRepository();
         repoTransacao.persiste(transacaoDeVenda);
 
+        System.out.println(repoTransacao.totalVendido());
+
         System.out.println("APROVADO");
     }
 }
