@@ -11,6 +11,8 @@ public abstract class Transacao {
     private double montante;
     private long id;
 
+    public Transacao() {}
+
     public Transacao(Cliente cliente, Concessionaria concessionaria, Veiculo veiculo,
             TransacaoStatus status, double montante, long id) {
         this.cliente = cliente;
