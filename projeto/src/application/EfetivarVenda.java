@@ -17,7 +17,8 @@ import persistencia.CSVConcessionariaRepository;
 import persistencia.CSVVeiculoRepository;
 
 public class EfetivarVenda {
-    public static TransacaoDeVenda criaTransacaoDeVenda(String cpfDoCliente, String placa, double montante, long idDaTransacao,
+    public static TransacaoDeVenda criaTransacaoDeVenda(String cpfDoCliente, String placa, double montante,
+            long idDaTransacao,
             int idDoColaboradorVendedor) throws IOException {
         ClienteRepository repoCliente = new CSVClienteRepository();
         ConcessionariaRepository repoConcessionaria = new CSVConcessionariaRepository();

@@ -27,8 +27,3 @@ public class EfetivarCompra {
         return new TransacaoDeCompra(cliente, concessionaria, veiculo, montante, idDaTransacao);
     }
 }
-
-
-
-
-

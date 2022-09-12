@@ -18,6 +18,7 @@ public class GUI {
     public static void cadastrarVeiculo() {
         String[] campos = new String[10];
 
+        JOptionPane.showMessageDialog(null, "CADASTRAR VEÍCULO", "CADASTRO", JOptionPane.INFORMATION_MESSAGE);
         campos[0] = JOptionPane.showInputDialog("modelo: ");
         campos[1] = JOptionPane.showInputDialog("ano: ");
         campos[2] = JOptionPane.showInputDialog("marca: ");
@@ -37,6 +38,10 @@ public class GUI {
     }
 
     public static void showNomeDoVendedorPorId() throws IOException {
+
+        JOptionPane.showMessageDialog(null, "BUSCAR O NOME DO VENDEDOR PELO ID", "BUSCA",
+                JOptionPane.INFORMATION_MESSAGE);
+
         ColaboradorVendedorRepository repoColaboradorVendedor = new CSVColaboradorVendedorRepository();
         int idParaBuscar = Integer.parseInt(JOptionPane.showInputDialog("Id do Vendedor: "));
         ColaboradorVendedor colaboradorVendedor = repoColaboradorVendedor.porId(idParaBuscar);

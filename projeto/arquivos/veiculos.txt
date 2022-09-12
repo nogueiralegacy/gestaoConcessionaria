@@ -2,3 +2,7 @@ Amarok;2022;Volkswagen;9BG116GW04C400001;branco;12000;00891353364;BRA2E19;autom�
 Celta;2016;Chevrolet;7FS023EPA69C40001;preto;67000;00569754615;PRW6D02;automóvel;sistema de som
 polo;2019;Volkswagen;94d4as8d444d6a;branco;45000;005598443131;PDR6N50;automóvel;pneus novos
 hb20;2022;Hyunday;56116311964;azul;20000;5s416d51a;PRE98L66;automóvel;nenhum
+astra;2002;chevrolet;559598985262;prata;250000;ASD95423AS2D;WRA781VC;automóvel;aerofólio
+fordK;2078;Ford;454ADC2AD;preto;10000;13565133;PRD75T2;automóvel;ar-condicionado
+Fiesta;2011;Ford;15S16DA84;cinza;30000;51616131;LDWD60;automóvel;trava elétrica
+palio;2014;Fiat;141600;branco;30000;1212156;PRTL84;automóvel;vidro-elétrico
